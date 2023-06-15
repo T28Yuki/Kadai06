@@ -1,0 +1,108 @@
+body {
+    background-color: #b7dbff;
+}
+.search #inputField {
+    background: #FFF;
+    border: solid 1px #eee;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+}
+/* 検索結果 */
+ul#books {
+    padding: 0;
+    list-style: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+ul#books:after {
+    content: "";
+    width: 22%;
+}
+ul#books li {
+    width: 22%;
+}
+a.bookLink {
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #313131;
+}
+.bookImage {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    margin-bottom: 10px;
+}
+.bookImageInner {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: -6px 6px 10px -2px #001b4440, 0 0 3px #8f9aaf1a;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+}
+.bookImageInner img {
+    max-height: 190px;
+}
+a.bookLink:hover > .bookImage .bookImageInner {
+    transform: scale(1.05);
+}
+.bookImageInner:after {
+    bottom: 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    border-radius: 5px;
+    background: linear-gradient(-90deg,#fff0,#ffffff1a 80%,#ffffff4d 95%,#fff6 96.5%,#cbcbcb14 98%,#6a6a6a1a);
+    border-radius: 3px;
+}
+
+p.bookPublishedDate, p.bookTitle {
+    margin: 0 auto;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 1.4;
+}
+p.bookPublishedDate {
+    color: #707070;
+    font-size: 0.9rem;
+    position: relative;
+    margin-bottom: 8px;
+}
+p.bookPublishedDate:before {
+    content: "\f017";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 100;
+    font-size: 0.85rem;
+    margin-right: 5px;
+    color: #707070;
+}
+a.bookLink:hover > p.bookTitle {
+    color: #3a9eff;
+}
+
+/* ボタン2度押し */
+button#ajaxButton:disabled {
+    pointer-events: none;
+    background: #eee;
+    filter: none;
+    color: #999;
+}
+
+@media screen and (max-width: 767px) {
+/* （ここにモバイル用スタイルを記述） */
+ul#books li {
+    width: 41%;
+}
+}
